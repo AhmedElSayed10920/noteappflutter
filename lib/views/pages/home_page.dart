@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:noteapp/views/pages/add_note.dart';
+import 'package:noteapp/views/widgets/custom_add_note_bottom_sheet.dart';
 import 'package:noteapp/views/widgets/notes_view_body.dart';
 
 class HomePage extends StatelessWidget {
@@ -11,7 +12,16 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).pushNamed(AddNote.id);
+          // Navigator.of(context).pushNamed(AddNote.id);
+          showModalBottomSheet(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16)),
+              context: context,
+              builder: (
+                context,
+              ) {
+                return const CustomAddNoteBottomSheet();
+              });
         },
         shape: const CircleBorder(),
         child: const Icon(Icons.add),
