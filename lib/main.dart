@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:noteapp/views/pages/add_note.dart';
 import 'package:noteapp/views/pages/home_page.dart';
 
 void main() {
@@ -16,7 +17,11 @@ class NoteApp extends StatelessWidget {
         brightness: Brightness.dark,
         fontFamily: 'Poppins',
       ),
-      home: const HomePage(),
+      routes: {
+        HomePage.id: (context) => const HomePage(),
+        AddNote.id: (context) => const AddNote(),
+      },
+      initialRoute:HomePage.id,
     );
   }
 }
