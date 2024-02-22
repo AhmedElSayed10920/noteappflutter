@@ -5,7 +5,7 @@ import 'package:noteapp/views/widgets/notes_view_body.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
-  static String id = 'homePageId';
+  static String id = 'HomePageId';
 
   @override
   Widget build(BuildContext context) {

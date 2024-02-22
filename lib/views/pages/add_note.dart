@@ -4,7 +4,7 @@ import 'package:noteapp/views/widgets/custom_text_field.dart';
 
 class AddNote extends StatelessWidget {
   const AddNote({super.key});
-  static String id = 'addNoteId';
+  static String id = 'AddNoteId';
 
   @override
   Widget build(BuildContext context) {
