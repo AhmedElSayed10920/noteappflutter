@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:noteapp/cubits/add_notes_cubit/add_notes_cubit.dart';
 import 'package:noteapp/models/note_model.dart';
-import 'package:noteapp/views/widgets/custom_button.dart';
-import 'package:noteapp/views/widgets/custom_text_field.dart';
+import 'package:noteapp/views/widgets/general-widgets/custom_button.dart';
+import 'package:noteapp/views/widgets/general-widgets/custom_text_field.dart';
 
 class AddNoteBody extends StatefulWidget {
   const AddNoteBody({
@@ -39,10 +39,10 @@ class _AddNoteState extends State<AddNoteBody> {
               subTitle = value;
             },
             hintText: 'Content',
-            maxLines: 5,
+            maxLines: 6,
           ),
           const SizedBox(
-            height: 35,
+            height: 16,
           ),
           BlocBuilder<AddNoteCubit, AddNotesStates>(
             builder: (context, state) {
@@ -66,6 +66,7 @@ class _AddNoteState extends State<AddNoteBody> {
               );
             },
           ),
+          const SizedBox(height: 16,)
         ],
       ),
     );

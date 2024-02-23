@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:noteapp/views/pages/add_note.dart';
-import 'package:noteapp/views/widgets/custom_add_note_bottom_sheet.dart';
-import 'package:noteapp/views/widgets/notes_view_body.dart';
+import 'package:noteapp/views/widgets/add-notes-widgets/custom_add_note_bottom_sheet.dart';
+import 'package:noteapp/views/widgets/home-page-widgets/notes_view_body.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -14,6 +14,7 @@ class HomePage extends StatelessWidget {
         onPressed: () {
           // Navigator.of(context).pushNamed(AddNote.id);
           showModalBottomSheet(
+            isScrollControlled: true,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16)),
               context: context,
