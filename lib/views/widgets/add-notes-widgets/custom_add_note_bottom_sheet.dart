@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:noteapp/cubits/add_notes_cubit/add_notes_cubit.dart';
+import 'package:noteapp/cubits/notes_cubit.dart/notes_cubit.dart';
 import 'package:noteapp/views/widgets/add-notes-widgets/add_note_body.dart';
 
 class CustomAddNoteBottomSheet extends StatelessWidget {
@@ -14,11 +14,10 @@ class CustomAddNoteBottomSheet extends StatelessWidget {
       child: BlocConsumer<AddNoteCubit, AddNotesStates>(
         listener: (context, state) {
           if (state is AddNotesSuccess) {
+            BlocProvider.of<NotesCubit>(context).fetchNotes();
             Navigator.pop(context);
           }
-          if (state is AddNotesFailure) {
-            print('Failer ${state.errMessage}');
-          }
+          if (state is AddNotesFailure) {}
         },
         builder: (context, state) {
           return AbsorbPointer(
