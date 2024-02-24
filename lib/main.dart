@@ -33,7 +33,7 @@ class NoteApp extends StatelessWidget {
         routes: {
           HomePage.id: (context) => const HomePage(),
           AddNote.id: (context) => const AddNote(),
-          EditNote.id: (context) => const EditNote(),
+          
         },
         initialRoute: HomePage.id,
       ),
