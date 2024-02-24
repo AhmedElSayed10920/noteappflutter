@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:noteapp/constants.dart';
 import 'package:noteapp/cubits/add_notes_cubit/add_notes_cubit.dart';
 
 
@@ -36,24 +37,13 @@ class CustomColorPickerListView extends StatefulWidget {
 
 class _CustomColorPickerListViewState extends State<CustomColorPickerListView> {
   int colorIndex = 0;
-  List<Color> colors = const [
-    Color(0xff1BE7FF),
-    Color(0xff6EEB83),
-    Color(0xffE4FF1A),
-    Color(0xffFFB800),
-    Color(0xffFF5714),
-    Color(0xffE6E8E6),
-    Color(0xff81726A),
-    Color(0xffF4FEC1),
-    Color(0xffD9F9A5),
-    Color(0xffD74E09),
-  ];
+  
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 48,
       child: ListView.builder(
-          itemCount: colors.length,
+          itemCount: kColors.length,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return Padding(
@@ -61,11 +51,11 @@ class _CustomColorPickerListViewState extends State<CustomColorPickerListView> {
               child: GestureDetector(
                 onTap: () {
                   colorIndex = index;
-                  BlocProvider.of<AddNoteCubit>(context).color = colors[index];
+                  BlocProvider.of<AddNoteCubit>(context).color = kColors[index];
                   setState(() {});
                 },
                 child: CustomColorPicker(
-                  color: colors[index],
+                  color: kColors[index],
                   colorPicked: colorIndex == index,
                 ),
               ),
