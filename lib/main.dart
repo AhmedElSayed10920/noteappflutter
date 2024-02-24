@@ -6,7 +6,6 @@ import 'package:noteapp/cubits/notes_cubit.dart/notes_cubit.dart';
 import 'package:noteapp/models/note_model.dart';
 import 'package:noteapp/simple_bloc_observer.dart';
 import 'package:noteapp/views/pages/add_note.dart';
-import 'package:noteapp/views/pages/edit_note.dart';
 import 'package:noteapp/views/pages/home_page.dart';
 
 void main() async {
@@ -33,7 +32,6 @@ class NoteApp extends StatelessWidget {
         routes: {
           HomePage.id: (context) => const HomePage(),
           AddNote.id: (context) => const AddNote(),
-          
         },
         initialRoute: HomePage.id,
       ),
